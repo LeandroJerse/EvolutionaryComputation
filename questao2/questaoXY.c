@@ -25,10 +25,25 @@ void ee(int MaxGeneraction, double *father, double *mother,double* avarageFather
         do {
             noiseMother = (double)rand() / (double)RAND_MAX * 2.5 - 0.5;
         } while (*mother+noiseMother< -0.5||*mother+noiseMother> 2.5);
+
+     
+        
     
 
         double son = *father+noiseFather;
         double daughter = *mother+noiseMother;
+
+        while ((son + daughter-2)>0)
+        {
+            if (son>-1.5)
+            {
+                son-=((double)rand() / (double)RAND_MAX * son + 0.01);;
+            }
+             if (daughter>-0.5)
+            {
+                daughter-=((double)rand() / (double)RAND_MAX * daughter + 0.01);
+            }
+        }
         *avarageFather+=son;
         vectorMen[count+1]= son;
         *avarageMother+=daughter;
@@ -71,9 +86,12 @@ int main(int argc, char const *argv[])
     double father=0,mother = 0,bestFather,avarageFather =0,avarageMother=0,menDeviation=0,womanDeviation=0;
     printf("Type the number of generations:\t");
     scanf("%d",&maxGeneration);
+    do
+    {
     printf("Type the X initial number, between -1.5 and 1.5;\n");
     scanf("%lf",&father);
-    while (father>1.5 || father <-1.5)
+    
+            while (father>1.5 || father <-1.5)
     {
         printf("Type again:\t");
         scanf("%lf",&father);
@@ -85,6 +103,12 @@ int main(int argc, char const *argv[])
         printf("Type again:\t");
         scanf("%lf",&mother);
     }
+    if (father + mother - 2>0)
+    {
+        printf("The sum of father and mother must be <= 0, type again:\n");
+    }
+    
+    } while (father + mother - 2>0);
     avarageFather = father;
     avarageMother= mother;
     
