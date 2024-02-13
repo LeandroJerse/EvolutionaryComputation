@@ -116,6 +116,6 @@ int main(int argc, char const *argv[])
     ee(maxGeneration,&father,&mother,&avarageFather,&avarageMother,&menDeviation,&womanDeviation);
 
     printf("\n\n------------------------------------------------------------------------------------------------\n-");
-    printf("\nMaxGen\tfather\tmother\tson\tdaughter\tBest son\tBest Daughter\t\tAvarage Son\t\tAvarage Daughter\tBest f(x,y)\n%d\t1\t1\t%d\t%d\t\t%lf\t%lf\t\t%lf+-%lf\t%lf+-%lf\t%lf\n",(maxGeneration+1),(maxGeneration),maxGeneration,maxGeneration,father,mother,avarageFather,menDeviation,avarageMother,womanDeviation,goal(father, mother));
+    printf("\nMaxGen\tfather\tmother\tson\tdaughter\tBest son\tBest Daughter\t\tAvarage Son\t\tAvarage Daughter\tBest f(x,y)\n%d\t1\t1\t%d\t%d\t\t%lf\t%lf\t\t%lf+-%lf\t%lf+-%lf\t%lf\n",(maxGeneration+1),(maxGeneration),maxGeneration,father,mother,avarageFather,menDeviation,avarageMother,womanDeviation,goal(father, mother));
     return 0;
 }
