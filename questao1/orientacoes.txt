@@ -1,0 +1,7 @@
+Projeto feito em C
+caso sua IDE não compile, faça os seguintes comandos no terminal:
+gcc computacaoEvolutiva.c -o computacaoEvolutiva -lm
+
+./computacaoEvolutiva
+
+
